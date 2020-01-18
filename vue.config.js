@@ -5,7 +5,8 @@ function resolve (dir) {
 }
 
 module.exports = {
-  outputDir: 'docs',
+  publicPath: process.env.NODE_ENV === 'production' ? '/dist/' : '/',
+  indexPath: resolve('index.html'),
 
   configureWebpack:
   {
