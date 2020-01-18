@@ -1,87 +1,54 @@
 <template lang='pug'>
 
-  v-app
+  #app
     page-header
 
-    main-toolbar
-
-    section#main-router-view
-      transition(name='slide-y-reverse-transition' mode='out-in')
-        router-view
+    main
+      section-who-i-am
+      section-photography
+      section-programming
 
     page-footer
-  //--
+
 </template>
 
+<script>
 
+import PageHeader from '@/components/page-header.vue'
+import sectionWhoIAm from '@/components/section-who-i-am.vue'
+import sectionPhotography from '@/components/section-photography.vue'
+import sectionProgramming from '@/components/section-programming.vue'
+import pageFooter from '@/components/page-footer.vue'
 
-<script lang='coffee'>
+export default
+{
+  name: 'App',
 
-  import pageHeader from '@/components/page-header.vue'
-  import mainToolbar from '@/components/main-toolbar.vue'
-  import pageFooter from '@/components/page-footer.vue'
-
-  export default
-    name: 'luciano-felix'
-
-
-    watch:
-      $route: ->
-        title = 'Luciano Felix'
-
-        if @$route.path != '/'
-          title += " - #{@$route.name}"
-
-        document.title = title
-
-
-    components:
-      'page-header': pageHeader
-      'main-toolbar': mainToolbar
-      'page-footer': pageFooter
+  components:
+  {
+    'page-header': PageHeader,
+    'section-who-i-am': sectionWhoIAm,
+    'section-photography': sectionPhotography,
+    'section-programming': sectionProgramming,
+    'page-footer': pageFooter
+  }
+}
 
 </script>
 
+<style lang='postcss'>
 
-
-<style lang='sass'>
-
-  html.overflow-y-hidden
-    overflow-y: auto !important
+  html
+    scroll-behavior: smooth
 
   body
-    cursor: default
+    @apply bg-light text-dark
+    font-family: 'Roboto', sans-serif
 
+  ::selection
+    @apply bg-gray-9
 
-  #main-router-view
-    min-height: calc(100vmin - 48px)
-
-
-  .theme--light.v-expansion-panel
-    .v-expansion-panel__container
-      .v-expansion-panel__header
-        .v-expansion-panel__header__icon
-          .v-icon
-            color: #000 !important
-
-
-  .theme--light.v-pagination
-    .v-pagination__navigation, .v-pagination__item, .v-pagination__item--active
-      box-shadow: none
-
-    .v-pagination__item
-      outline: none
-      border-radius: 2px
-      font-weight: 500
-
-      &:not(.v-pagination__item--active)
-        background-color: transparent !important
-
-    .v-pagination__navigation
-      background-color: transparent !important
-      outline: none
-
-      .v-icon
-        color: #000 !important
+  #app
+    @apply w-full h-full absolute
 
 </style>

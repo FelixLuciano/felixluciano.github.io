@@ -1,49 +1,40 @@
-<template lang='pug'>
+<template lang="pug">
 
-  header.grey.darken-4(:style='{height: windowHeight + "px"}')
+  header(class='w-full h-full p-1 sm:p-4 lg:p-6')
+    section(class='flex flex-col w-full h-full p-2 text-white bg-dark')
 
-    v-container(fill-height)
-      v-layout(column justify-center)
+      div(class='flex items-center flex-grow')
+        div(class='w-full')
 
-        v-spacer
+          logo#logo(class='block' width='64' height='64')
 
-        v-flex(xs10 d-flex align-center)
-          img(src='public/brand/full-logo.svg' height='200')
+          article(class='w-11/12 px-2 mt-6 text-justify')
+            greetings(class='text-md md:text-xl' @typingStarted='showNavbar = false' @typingEnded='showNavbar = true')
 
-        v-flex.text-xs-center(xs1)
-          v-btn#btn(dark icon large @click='scrollDown')
-            v-icon(large color='white') mdi-chevron-down
-  //--
+      page-navbar(class='transition-opacity transition-delay-500' :class="{'opacity-0': !showNavbar}")
+
 </template>
 
+<script>
 
+import logo from '@/assets/branding/logo-light.svg'
+import greetings from '@/components/greetings'
+import pageNavbar from '@/components/page-navbar'
 
-<script lang='coffee'>
+export default {
+  name: 'page-header',
 
-export default
-  name: 'page-header'
+  data () {
+    return {
+      showNavbar: false
+    }
+  },
 
-
-  data: ->
-    windowHeight: window.innerHeight
-
-
-  methods:
-    scrollDown: ->
-      @$vuetify.goTo '#main-router-view',
-        duration: 1000
-        offset: -48
-
-
-  mounted: ->
-    addEventListener 'resize', ->
-      @windowHeight = window.innerHeight
+  components: {
+    'logo': logo,
+    'greetings': greetings,
+    'page-navbar': pageNavbar
+  }
+}
 
 </script>
-
-
-
-<style lang='sass'>
-
-
-</style>

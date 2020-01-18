@@ -1,27 +1,7 @@
-<div align='center'>
-  <img src='public/readme-banner.svg'>
-</div>
-<br/>
+![Profile photo](src/assets/me/profile-photo.jpg)
 
-## Check out
-##### [FelixLuciano.github.io](https://felixluciano.github.io)
+<center>
+I am Luciano Felix, a student starting my career in computer engineering...
 
-
-## Build Setup
-
-``` bash
-$ npm install
-  Install dependencies.
-
-$ npm start
-  Open project interface
-```
-
-
-## License
-
-MIT
-
-
-<br/>
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+See my personal page by visiting [FelixLuciano.github.io](htts://felixluciano.github.io).
+</center>
