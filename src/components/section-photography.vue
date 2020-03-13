@@ -3,18 +3,16 @@
   page-section#Photography
     template(slot='title') PHOTOGRAPHY
 
-    section(class='flex flex-row flex-wrap w-full children:p-1 sm:children:p-2')
-      article(class='w-full')
-        publication-card(class='w-full' :data-post='posts.featured')
+    section(class='grid grid-cols-2 gap-1 md:gap-3')
+      publication-card(class='col-span-2' :data-post='posts.featured')
 
       template(v-for='post in posts.galery')
-        article(class='w-1/2')
-          publication-card(class='w-full' :data-post='post')
+        publication-card(:data-post='post')
 
     template(slot='footer')
       | Click to magnify. See more photos on
       |
-      a(class='underline' href='https://instagram.com/felix.lucianodias' title='Open my Instagram profile page') my Instagram
+      a(class='underline' href='https://instagram.com/felix.lucianodias' title='Open my Instagram profile page' target='_blank' rel='noopener noreferrer') my Instagram
       | .
 
 </template>
@@ -23,7 +21,7 @@
 
 import pageSection from '@/components/page-section.vue'
 import publicationCard from '@/components/publication-card.vue'
-import posts from '@/assets/photography/index.yml'
+import posts from '@/assets/sections/photography.yml'
 
 export default {
   name: 'section-photography',

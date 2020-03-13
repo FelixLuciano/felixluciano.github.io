@@ -9,7 +9,7 @@
           logo#logo(class='block' width='64' height='64')
 
           article(class='w-11/12 px-2 mt-6 text-justify')
-            greetings(class='text-md md:text-xl' @typingStarted='showNavbar = false' @typingEnded='showNavbar = true')
+            greetings(class='text-sm sm:text-xl' @typingStarted='showNavbar = false' @typingEnded='showNavbar = true')
 
       page-navbar(class='transition-opacity transition-delay-500' :class="{'opacity-0': !showNavbar}")
 

@@ -1,7 +1,7 @@
 <template lang="pug">
 
   figure
-    a(:href='dataPost.url' v-if='!zoomSource && dataPost.url' title='Check out this publication')
+    a(:href='dataPost.url' v-if='!zoomSource && dataPost.url' title='Check out this publication' target='_blank' rel='noopener noreferrer')
       img(:src='thumbSource' :alt='dataPost.alt')
 
     img(:src='thumbSource' :data-zoom-src='zoomSource' :alt='dataPost.alt' v-else)
@@ -35,11 +35,11 @@ export default {
 
   computed: {
     thumbSource () {
-      return require(`@/assets/${this.dataPost.source}`)
+      return require(`@/../public/${this.dataPost.source}`)
     },
 
     zoomSource () {
-      if (this.dataPost.zoomSource) return require(`@/assets/${this.dataPost.zoomSource}`)
+      if (this.dataPost.zoomSource) return require(`@/../public/${this.dataPost.zoomSource}`)
       else return false
     }
   },

@@ -1,9 +1,9 @@
 <template lang="pug">
 
-  section(class='container py-5 mx-auto' :style='{maxWidth: maxWidth}')
+  section(class='container px-1 pt-6 mx-auto md:px-2' :style='{maxWidth}')
 
-    article(class='w-full py-16 text-center' v-if='$slots.title')
-      strong(class='text-4xl')
+    article(class='w-full px-4 py-12 text-center md:py-16' v-if='$slots.title')
+      strong(class='text-3xl md:text-4xl')
         slot(name='title')
 
     slot

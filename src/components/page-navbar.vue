@@ -11,19 +11,19 @@
 
     article(class='flex sm:pr-2')
       button(class='contact-button' tabindex="-1")
-        a(class='contact-button--content' :href='links.instagram' title='Open my Instagram profile page')
+        a(class='contact-button--content' :href='links.instagram' title='Open my Instagram profile page' target='_blank' rel='noopener noreferrer')
           icon-instagram(class='w-5 h-5 fill-current sm:w-6 sm:h-6')
 
       button(class='contact-button' tabindex="-1")
-        a(class='contact-button--content' :href='links.codepen' title='Open my Codepen profile page')
+        a(class='contact-button--content' :href='links.codepen' title='Open my Codepen profile page' target='_blank' rel='noopener noreferrer')
           icon-codepen(class='w-5 h-5 fill-current sm:w-6 sm:h-6')
 
       button(class='contact-button' tabindex="-1")
-        a(class='contact-button--content' :href='links.github' title='Open my Github profile page')
+        a(class='contact-button--content' :href='links.github' title='Open my Github profile page' target='_blank' rel='noopener noreferrer')
           icon-github(class='w-5 h-5 fill-current sm:w-6 sm:h-6')
 
       button(class='contact-button' tabindex="-1")
-        a(class='contact-button--content' @click.prevent='mailTo' href='#' title='Send me an email')
+        a(class='contact-button--content' href='#Contact' title='Send me an email')
           icon-email(class='w-5 h-5 fill-current sm:w-6 sm:h-6')
 
 </template>
@@ -44,15 +44,8 @@ export default {
       links: {
         instagram: 'https://instagram.com/felix.lucianodias',
         codepen: 'https://codepen.io/FelixLuciano',
-        github: 'https://github.com/FelixLuciano',
-        mail: 'felix.lucianodias'
+        github: 'https://github.com/FelixLuciano'
       }
-    }
-  },
-
-  methods: {
-    mailTo () {
-      window.open(`mailto:${this.links.mail}%40gmail.com`)
     }
   },
 
@@ -70,7 +63,7 @@ export default {
 <style lang="postcss">
 
 .contact-button
-  @apply bg-dark border border-solid border-dark transition-all rounded-full
+  @apply bg-dark border border-solid border-dark transition-all duration-200 rounded-full
 
   &:hover
     @apply bg-gray-2 border-gray-3

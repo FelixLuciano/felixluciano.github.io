@@ -7,6 +7,7 @@
       section-who-i-am
       section-photography
       section-programming
+      section-contact
 
     page-footer
 
@@ -18,6 +19,7 @@ import PageHeader from '@/components/page-header.vue'
 import sectionWhoIAm from '@/components/section-who-i-am.vue'
 import sectionPhotography from '@/components/section-photography.vue'
 import sectionProgramming from '@/components/section-programming.vue'
+import sectionContact from '@/components/section-contact.vue'
 import pageFooter from '@/components/page-footer.vue'
 
 export default
@@ -30,6 +32,7 @@ export default
     'section-who-i-am': sectionWhoIAm,
     'section-photography': sectionPhotography,
     'section-programming': sectionProgramming,
+    'section-contact': sectionContact,
     'page-footer': pageFooter
   }
 }

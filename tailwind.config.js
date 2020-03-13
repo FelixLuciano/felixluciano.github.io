@@ -1,1 +1,1 @@
-module.exports = require('@felixluciano/my-tailwind')
+module.exports = require('@felixluciano/my-tailwind')()
