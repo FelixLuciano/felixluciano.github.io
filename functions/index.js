@@ -2,7 +2,7 @@ const functions = require('firebase-functions')
 const cors = require('cors')
 const nodemailer = require('nodemailer')
 
-const corsHandler = cors({ origin: 'https://felixluciano.github.io/' })
+const corsHandler = cors({ origin: 'https://felixluciano.github.io' })
 
 /* Firebase Enviroment variables
  / https://firebase.google.com/docs/functions/config-env
