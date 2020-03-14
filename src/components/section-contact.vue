@@ -13,7 +13,7 @@
 
       br
 
-      input(class='ml-3 text-lg underline cursor-pointer' type='submit' :disabled='disabled')
+      input(class='ml-3 text-lg underline bg-transparent cursor-pointer' type='submit' :disabled='disabled')
 
     section(class='text-center' v-show='showMessage')
       strong(class='text-2xl') {{ messageDisplays.title }}
