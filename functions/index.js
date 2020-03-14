@@ -24,12 +24,14 @@ const request = (req, res) => {
   res.removeHeader("x-powered-by")
 
   return corsHandler(req, res, () => {
-    const { contact, message } = req.body
+    const { contact, message:plainMessage } = req.body
+
+    const message = plainMessage.replace(/\n/gm, '<br>')
 
     const mail = {
-      from: `Messeger <${user}>`,
+      from: `FelixLuciano.github.io <${user}>`,
       to: to,
-      text: `Reply contact: ${contact}\n\nMessage:\n${message}`
+      html: `<b>Contact:</b><div style="padding-left:1ex">${contact}</div><br><b>Message:</b><blockquote class="gmail_quote" style="margin:.5ex 0 0 1ex;border-left:1px solid #000;padding-left: 1ex;">${message}</blockquote>`
     }
 
     mailTransport.sendMail(mail, err => {

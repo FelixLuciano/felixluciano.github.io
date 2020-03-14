@@ -1,19 +1,19 @@
 <template lang="pug">
 
-  page-section#Contact(max-width='750px')
+  page-section#Send-me-a-message(max-width='750px')
     template(slot='title') SEND ME A MESSAGE
 
     form.p-0(:action='apiUrl' method='post' target='_blank' @submit.prevent='submit' v-show='!showMessage')
 
-      input(class='w-full p-3' type='text' name='contact' placeholder='Your contact' required='true' v-model='contact' :disabled='disabled')
+      input(class='w-full p-3 bg-white' type='text' name='contact' placeholder='Your contact' required='true' ref='contact' v-model='contact' :disabled='disabled')
 
       br
 
-      textarea(class='w-full h-32 p-3 mt-1 min-h-32' name='message' placeholder='Hey, Luciano!\n\nI am...' required='true' v-model='message' :disabled='disabled')
+      textarea(class='w-full p-3 mt-1 overflow-hidden leading-relaxed bg-white appearance-none resize-none min-h-32' name='message' placeholder='Hey, Luciano!\n\nI am...' required='true' ref='textarea' v-model='message' :disabled='disabled')
 
       br
 
-      input(class='ml-3 text-lg underline bg-transparent cursor-pointer' type='submit' :disabled='disabled')
+      input(class='ml-3 text-lg underline bg-transparent cursor-pointer' type='submit' value='send' :disabled='disabled')
 
     section(class='text-center' v-show='showMessage')
       strong(class='text-2xl') {{ messageDisplays.title }}
@@ -30,7 +30,7 @@
 import pageSection from '@/components/page-section.vue'
 
 export default {
-  name: 'section-contact',
+  name: 'section-send-me-a-message',
 
   data () {
     return {
@@ -59,6 +59,12 @@ export default {
           message: this.message
         })
       }
+    }
+  },
+
+  watch: {
+    message (val) {
+      this.$refs.textarea.rows = val.split(/\n/gm).length
     }
   },
 
@@ -101,6 +107,12 @@ export default {
       this.messageDisplays.message = message
       this.messageDisplays.action = action
     }
+  },
+
+  mounted () {
+    this.$root.$on('focusMessageForm', () => {
+      this.$nextTick(() => this.$refs.contact.focus())
+    })
   },
 
   components: {

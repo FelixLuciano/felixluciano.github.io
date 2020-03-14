@@ -1,6 +1,6 @@
 <template lang="pug">
 
-  footer(class='flex flex-wrap items-center px-4 pt-16 pb-4')
+  footer#page-footer(class='flex flex-wrap items-center px-4 pt-16 pb-4')
 
     article(class='w-full text-center')
       logo(class='inline-block' width='64')
