@@ -12,7 +12,7 @@
             article(class='w-11/12 px-2 mt-6 text-justify')
               greetings(class='text-sm sm:text-xl' @typingStarted='showNavbar = false' @typingEnded='showNavbar = true')
 
-        page-navbar#page-nav(class='transition-opacity transition-delay-500' :class="{'opacity-0': !showNavbar}")
+        page-navbar#page-nav(class='transition-opacity duration-300 transition-delay-500' :class="{'opacity-0': !showNavbar}")
 
 </template>
 

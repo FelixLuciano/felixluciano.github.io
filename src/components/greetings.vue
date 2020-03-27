@@ -52,20 +52,13 @@ export default {
 
     typeText (text) {
       return new Promise(resolve => {
-        const length = text.length
-        let index = 0
-
-        function type () {
-          this.typeCharacter(text[index])
-            .then(a => {
-              index++
-
-              if (index < length) type.call(this)
-              else resolve()
-            })
+        const type = index => {
+          this.typeCharacter(text[index]).then(() => {
+            if (index + 1 < text.length) type(index + 1)
+            else resolve()
+          })
         }
-
-        type.call(this)
+        type(0)
       })
     },
 
@@ -98,11 +91,8 @@ export default {
           })
 
           .then(() => {
-            return this.wait(1000)
-          })
-
-          .then(() => {
             this.setText('Hello, i am Luciano and on this page you can know more about me and my creations')
+            return this.wait(1000)
           })
 
           .then(resolve)
