@@ -9,7 +9,9 @@
 
       br
 
-      textarea(class='w-full p-3 mt-1 overflow-hidden leading-relaxed bg-white appearance-none resize-none min-h-32' name='message' placeholder='Hey, Luciano!\n\nI am...' required='true' ref='textarea' v-model='message' :disabled='disabled')
+      textarea(class='w-full h-2' name='message' required='true' v-model='message' @focus.prevent="$refs.message.focus()")
+
+      div(class='relative w-full p-3 -mt-4 leading-relaxed bg-white appearance-none resize-none min-h-32' @input="message=$event.target.innerText" ref="message" role="textbox" contenteditable)
 
       br
 
@@ -62,12 +64,6 @@ export default {
     }
   },
 
-  watch: {
-    message (val) {
-      this.$refs.textarea.rows = val.split(/\n/gm).length
-    }
-  },
-
   methods: {
     submit () {
       this.disabled = true
@@ -96,6 +92,7 @@ export default {
 
               this.contact = ''
               this.message = ''
+              this.$refs.message.innerText = ''
             }
           }
         })
