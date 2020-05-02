@@ -9,9 +9,7 @@
 
       br
 
-      textarea(class='w-full h-2' name='message' required='true' v-model='message' @focus.prevent="$refs.message.focus()")
-
-      div(class='relative w-full p-3 -mt-4 leading-relaxed bg-white appearance-none resize-none min-h-32' @input="message=$event.target.innerText" ref="message" role="textbox" contenteditable)
+      autosizing-textarea(class='relative w-full p-3 mt-2 leading-relaxed bg-white appearance-none min-h-32' name='message' placeholder='Hey, Luciano!\n\nI am...' required='true' v-model='message' :disabled='disabled')
 
       br
 
@@ -30,6 +28,7 @@
 <script>
 
 import pageSection from '@/components/page-section.vue'
+import autosizingTextarea from '@/components/autosizing-textarea.vue'
 
 export default {
   name: 'section-send-me-a-message',
@@ -70,7 +69,8 @@ export default {
 
       fetch(this.apiUrl, this.request)
 
-        .catch(() => {
+        .catch((a, b) => {
+          console.log(a, b)
           this.displayMessage({
             title: 'Error!',
             message: 'Something went wrong and your message could not be sent.',
@@ -92,7 +92,6 @@ export default {
 
               this.contact = ''
               this.message = ''
-              this.$refs.message.innerText = ''
             }
           }
         })
@@ -113,7 +112,8 @@ export default {
   },
 
   components: {
-    'page-section': pageSection
+    'page-section': pageSection,
+    'autosizing-textarea': autosizingTextarea
   }
 }
 

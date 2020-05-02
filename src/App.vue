@@ -15,12 +15,12 @@
 
 <script>
 
-import PageHeader from '@/components/page-header.vue'
-import sectionWhoIAm from '@/components/section-who-i-am.vue'
-import sectionPhotography from '@/components/section-photography.vue'
-import sectionProgramming from '@/components/section-programming.vue'
-import sectionSendMeAMessage from '@/components/section-send-me-a-message.vue'
-import pageFooter from '@/components/page-footer.vue'
+import PageHeader from '@/sections/page-header.vue'
+import sectionWhoIAm from '@/sections/who-i-am.vue'
+import sectionPhotography from '@/sections/photography.vue'
+import sectionProgramming from '@/sections/programming.vue'
+import sectionSendMeAMessage from '@/sections/send-me-a-message.vue'
+import pageFooter from '@/sections/page-footer.vue'
 
 export default
 {
