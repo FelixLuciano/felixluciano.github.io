@@ -106,9 +106,7 @@ export default {
   },
 
   mounted () {
-    this.$root.$on('focusMessageForm', () => {
-      this.$nextTick(() => this.$refs.contact.focus())
-    })
+    this.$root.$on('focusMessageForm', () => this.$refs.contact.focus({ preventScroll: true }))
   },
 
   components: {

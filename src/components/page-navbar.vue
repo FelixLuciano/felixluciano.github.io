@@ -22,8 +22,8 @@
         a(class='contact-button--content' :href='links.github' title='Open my Github profile page' target='_blank' rel='noopener noreferrer')
           icon-github(class='w-5 h-5 fill-current sm:w-6 sm:h-6')
 
-      button(class='contact-button' tabindex="-1" @click='focusContactForm')
-        a(class='contact-button--content' href='#Send-me-a-message' title='Send me an email')
+      button(class='contact-button' tabindex="-1")
+        a(class='contact-button--content' href='#Send-me-a-message' @click='focusContactForm' title='Send me an email')
           icon-email(class='w-5 h-5 fill-current sm:w-6 sm:h-6')
 
 </template>
@@ -51,7 +51,7 @@ export default {
 
   methods: {
     focusContactForm () {
-      this.$root.$emit('focusMessageForm')
+      setTimeout(() => this.$root.$emit('focusMessageForm'), 500)
     }
   },
 
