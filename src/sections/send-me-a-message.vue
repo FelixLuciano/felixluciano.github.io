@@ -82,17 +82,15 @@ export default {
         .then(req => {
           this.disabled = false
 
-          if (req.status) {
-            if (req.status >= 200 && req.status < 300) {
-              this.displayMessage({
-                title: 'Done!',
-                message: 'Your message has been sent, and I will respond as soon as I can.',
-                action: 'Send another message'
-              })
+          if (req?.status === 200) {
+            this.displayMessage({
+              title: 'Done!',
+              message: 'Your message has been sent, and I will respond as soon as I can.',
+              action: 'Send another message'
+            })
 
-              this.contact = ''
-              this.message = ''
-            }
+            this.contact = ''
+            this.message = ''
           }
         })
     },
