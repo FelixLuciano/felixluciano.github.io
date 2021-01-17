@@ -2,7 +2,7 @@ const functions = require('firebase-functions')
 const cors = require('cors')
 const nodemailer = require('nodemailer')
 
-const corsHandler = cors({ origin: 'https://felixluciano.github.io' })
+const corsHandler = cors({ origin: 'https://lucianofelix.com.br' })
 
 /* Firebase Enviroment variables
  / https://firebase.google.com/docs/functions/config-env
@@ -29,7 +29,7 @@ const request = (req, res) => {
     const message = plainMessage.replace(/\n/gm, '<br>')
 
     const mail = {
-      from: `FelixLuciano.github.io <${user}>`,
+      from: `LucianoFelix.com.br <${user}>`,
       to: to,
       html: `<b>Contact:</b><div style="padding-left:1ex">${contact}</div><br><b>Message:</b><blockquote class="gmail_quote" style="margin:.5ex 0 0 1ex;border-left:1px solid #000;padding-left: 1ex;">${message}</blockquote>`
     }

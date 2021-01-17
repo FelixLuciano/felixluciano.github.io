@@ -35,7 +35,7 @@ export default {
 
   data () {
     return {
-      apiUrl: 'https://us-central1-felixluciano-github-io.cloudfunctions.net/sendMessage/',
+      apiUrl: 'https://us-central1-luciano-felix.cloudfunctions.net/sendMessage/',
       contact: '',
       message: '',
       disabled: false,
