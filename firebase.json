@@ -3,5 +3,17 @@
     "predeploy": [
       "npm --prefix \"$RESOURCE_DIR\" run lint"
     ]
+  },
+  "hosting": {
+    "public": ".",
+    "rewrites": [
+      {
+        "source": "/send-message",
+        "function": "sendMessage"
+      }
+    ],
+    "ignore": [
+      "!404.html"
+    ]
   }
 }
