@@ -69,8 +69,8 @@ export default {
 
       fetch(this.apiUrl, this.request)
 
-        .catch((a, b) => {
-          console.log(a, b)
+        .catch(err => {
+          console.error(err)
           this.displayMessage({
             title: 'Error!',
             message: 'Something went wrong and your message could not be sent.',
