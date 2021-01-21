@@ -37,4 +37,4 @@ function sendMessage(request, response) {
   })
 }
 
-exports.default = sendMessage
+module.exports = sendMessage
