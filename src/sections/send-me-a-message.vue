@@ -4,7 +4,7 @@ pageSection#Send-me-a-message.max-w-screen-md
   template(v-slot:title) SEND ME A MESSAGE
 
   form.p-0(:action="form.apiUrl" method="post" target="_blank" @submit.prevent="submit" v-show="!info.display")
-    input.w-full.p-3.bg-white.disabled_opacity-50(type="text" name="contact" placeholder="Your contact" required="true" ref="contact" v-model="form.contact" :disabled="form.disabled")
+    input.w-full.p-3.bg-white.disabled_opacity-50(type="text" name="contact" placeholder="Your contact" required="true" v-model="form.contact" :disabled="form.disabled")
     br
     autosizing-textarea.appearance-none.relative.w-full.min-h-32.p-3.mt-2.bg-white.disabled_opacity-50.leading-relaxed(name="message" placeholder="Hey, Luciano!\n\nI am..." required="true" v-model="form.message" :disabled="form.disabled")
     br

@@ -23,12 +23,12 @@ nav.flex.items-center
         github-icon.contact-button--icon
 
     button.contact-button(tabindex="-1")
-      a.contact-button--content(href="#Send-me-a-message" @click="focusContactForm" title="Send me an email")
+      a.contact-button--content(href="#Send-me-a-message" title="Send me an email")
         email-icon.contact-button--icon
 
 </template>
 
-<script>
+<script setup>
 
 import arrowDownIcon from "@icons/chevron-down.svg"
 import instagramIcon from "@icons/instagram.svg"
@@ -36,31 +36,11 @@ import codepenIcon from "@icons/codepen.svg"
 import githubIcon from "@icons/github.svg"
 import emailIcon from "@icons/email-outline.svg"
 
-export default {
-  emits: ["focusMessageForm"],
-  components: {
-    "arrow-down-icon": arrowDownIcon,
-    "instagram-icon": instagramIcon,
-    "codepen-icon": codepenIcon,
-    "github-icon": githubIcon,
-    "email-icon": emailIcon
-  },
-  setup(props, context) {
-    const links = {
-      instagram: "https://instagram.com/felix.lucianodias",
-      codepen: "https://codepen.io/FelixLuciano",
-      github: "https://github.com/FelixLuciano"
-    }
 
-    function focusContactForm () {
-      context.emit("focusMessageForm")
-    }
-
-    return {
-      links,
-      focusContactForm
-    }
-  }
+const links = {
+  instagram: "https://instagram.com/felix.lucianodias",
+  codepen: "https://codepen.io/FelixLuciano",
+  github: "https://github.com/FelixLuciano"
 }
 
 </script>
