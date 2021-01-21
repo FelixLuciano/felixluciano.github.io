@@ -1,143 +1,72 @@
 <template lang="pug">
 
-  span
-    icon-quote-open(class='inline' fill='currentColor')
+span
+  quoteOpenIcon.inline.fill-current
 
-    span {{ typedText }}
-    span(class='blinking-cursor' v-if='showBlinkingCursor') _
+  span(v-text="text")
+  span#typing-cursor(v-if="showCursor") _
 
-    icon-quote-close(class='inline' fill='currentColor')
+  quoteOpenIcon.inline.fill-current.transform.rotate-180
 
 </template>
-
 <script>
 
-import quoteOpenIcon from 'icons/format-quote-open'
-import quoteCloseIcon from 'icons/format-quote-close'
+import { ref } from "vue"
+
+import quoteOpenIcon from "@icons/format-quote-open.svg"
 
 export default {
-  name: 'greetings',
-
-  data () {
-    return {
-      typedText: '...',
-      showBlinkingCursor: false
-    }
-  },
-
-  methods: {
-    setText (text) {
-      this.typedText = text
-    },
-
-    pushCharacter (character) {
-      this.typedText += character
-    },
-
-    wait (time) {
-      return new Promise(resolve => {
-        setTimeout(resolve, time)
-      })
-    },
-
-    typeCharacter (character) {
-      return new Promise(resolve => {
-        const randomMsInterval = 100 * Math.random()
-        const msInterval = randomMsInterval < 50 ? 10 : randomMsInterval
-
-        this.pushCharacter(character)
-        this.wait(msInterval).then(resolve)
-      })
-    },
-
-    typeText (text) {
-      return new Promise(resolve => {
-        const type = index => {
-          this.typeCharacter(text[index]).then(() => {
-            if (index + 1 < text.length) type(index + 1)
-            else resolve()
-          })
-        }
-        type(0)
-      })
-    },
-
-    typeGreetings () {
-      return new Promise(resolve => {
-        this.typeText('Hello')
-
-          .then(() => {
-            return this.wait(500)
-          })
-
-          .then(() => {
-            return this.typeText(', i am Luciano')
-          })
-
-          .then(() => {
-            return this.wait(750)
-          })
-
-          .then(() => {
-            return this.typeText(' and on this page you can know more about me')
-          })
-
-          .then(() => {
-            return this.wait(1000)
-          })
-
-          .then(() => {
-            return this.typeText(' and my creations')
-          })
-
-          .then(() => {
-            this.setText('Hello, i am Luciano and on this page you can know more about me and my creations')
-            return this.wait(1000)
-          })
-
-          .then(resolve)
-      })
-    }
-  },
-
-  mounted () {
-    this.$emit('typingStarted')
-
-    this.wait(1000)
-
-      .then(() => {
-        this.setText('')
-        this.showBlinkingCursor = true
-
-        return this.wait(1000)
-      })
-
-      .then(() => {
-        return this.typeGreetings()
-      })
-
-      .then(() => {
-        this.$emit('typingEnded')
-
-        return this.wait(1000)
-      })
-
-      .then(() => {
-        this.showBlinkingCursor = false
-      })
-  },
-
+  emits: ["typingStarted", "typingEnded"],
   components: {
-    'icon-quote-open': quoteOpenIcon,
-    'icon-quote-close': quoteCloseIcon
+    quoteOpenIcon
+  },
+  setup(props, context) {
+    const text = ref("...")
+    const showCursor = ref(false)
+
+    const sleep = time => new Promise(resolve => setTimeout(resolve, time))
+
+    async function type (input) {
+      for (let character of input) {  
+        const randomMs = 100 * Math.random()
+        const interval = randomMs < 50 ? 10 : randomMs
+        text.value += character
+        await sleep(interval)
+      }
+    }
+
+    async function init() {
+      context.emit("typingStarted")
+      await sleep(1000)
+      text.value = ""
+      showCursor.value = true
+      await sleep(1000)
+      await type("Hello")
+      await sleep(500)
+      await type(", i am Luciano")
+      await sleep(750)
+      await type(" and on this page you can know more about me")
+      await sleep(1000)
+      await type(" and my creations")
+      await sleep(1000)
+      context.emit("typingEnded")
+      await sleep(1000)
+      showCursor.value = false
+    }
+
+    init()
+
+    return {
+      text,
+      showCursor
+    }
   }
 }
 
 </script>
+<style lang="postcss" scoped>
 
-<style lang='postcss' scoped>
-
-.blinking-cursor
+#typing-cursor
   animation: blink 750ms steps(2, start) infinite
 
 @keyframes blink

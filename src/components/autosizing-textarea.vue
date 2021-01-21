@@ -1,38 +1,33 @@
 <template lang="pug">
 
-  textarea(:value='value' @input='input')
+textarea.overflow-y-hidden.resize-none(:value="modelValue" @input="input")
 
 </template>
-
 <script>
 
 export default {
-  name: 'autosizing-textarea',
-
-  props: [ 'value' ],
-
-  methods: {
-    input () {
-      this.updateSize()
-      this.$emit('input', this.$el.value)
-    },
-    updateSize () {
-      this.$el.style.height = 'auto'
-      this.$el.style.height = (this.$el.scrollHeight) + 'px'
+  props: {
+    modelValue: {
+      required: false,
+      type: String,
+      default: ""
     }
   },
+  setup(props, { emit }) {
+    function updateSize(target) {
+      target.style.height = "auto"
+      target.style.height = target.scrollHeight + "px"
+    }
 
-  mounted () {
-    this.updateSize()
+    function input({target}) {
+      updateSize(target)
+      emit("update:modelValue", target.value)
+    }
+
+    return {
+      input
+    }
   }
 }
 
 </script>
-
-<style lang='postcss' scoped>
-
-textarea
-  overflow-y: hidden
-  resize: none
-
-</style>

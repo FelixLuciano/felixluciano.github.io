@@ -1,61 +1,57 @@
 <template lang="pug">
 
-  figure
-    a(:href='dataPost.url' v-if='!zoomSource && dataPost.url' title='Check out this publication' target='_blank' rel='noopener noreferrer')
-      img(:src='thumbSource' :alt='dataPost.alt')
+figure
+  a(:href="post.url" v-if="!post.zoomSource && post.url" title="Check out this publication" target="_blank" rel="noopener noreferrer")
+    img.w-full(:src="thumb" :alt="post.alt")
 
-    img(:src='thumbSource' :data-zoom-src='zoomSource' :alt='dataPost.alt' v-else)
+  img.w-full(:src="thumb" :data-zoom-src="zoom" :alt="post.alt" v-else)
 
-    figcaption(class='mt-2')
-      strong
-        a(class='underline' :href='dataPost.url' v-if='dataPost.url') {{ this.dataPost.title }}
-        template(v-else) {{ this.dataPost.title }}
+  figcaption.mt-2
+    strong
+      a.underline(:href="post.url" v-if="post.url") {{ post.title }}
+      template(v-else) {{ post.title }}
 
-      template(v-if='dataPost.date')
-        |
-        | - {{ dataPost.date }}
+    template(v-if="post.date")
+      |
+      | - {{ post.date }}
 
-      p(v-if='dataPost.description') {{ dataPost.description }}
+    p(v-if="post.description") {{ post.description }}
 
 </template>
-
 <script>
 
-import MediumZoom from 'medium-zoom'
+import * as vue from "vue"
+
+import { ref, getCurrentInstance, onMounted } from "vue"
+import MediumZoom from "medium-zoom"
 
 export default {
-  name: 'publication-card',
-
   props: {
     dataPost: {
       type: Object,
       required: true
     }
   },
+  setup({ dataPost }, context) {
+    const thumb = dataPost.source
+    const zoom = dataPost.zoomSource
 
-  computed: {
-    thumbSource () {
-      return require(`@/../public/${this.dataPost.source}`)
-    },
-
-    zoomSource () {
-      if (this.dataPost.zoomSource) return require(`@/../public/${this.dataPost.zoomSource}`)
-      else return false
-    }
-  },
-
-  methods: {
-    setupZoom () {
-      const imageNode = this.$vnode.elm.querySelector('img')
-
-      MediumZoom(imageNode, {
-        background: '#EEE'
+    if (dataPost.zoomSource) {
+      const instance = getCurrentInstance()
+      onMounted(() => {
+        const imageNode = instance.vnode.el.querySelector("img")
+        
+        MediumZoom(imageNode, {
+          background: "#EEE"
+        })
       })
     }
-  },
 
-  mounted () {
-    if (this.dataPost.zoomSource) this.setupZoom()
+    return {
+      post: dataPost,
+      thumb,
+      zoom
+    }
   }
 }
 

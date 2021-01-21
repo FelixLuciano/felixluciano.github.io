@@ -1,80 +1,82 @@
 <template lang="pug">
 
-  nav(class='flex items-center')
+nav.flex.items-center
 
-    article(class='inline-flex items-center pl-2 sm:pl-3')
-      a(class='text-sm md:text-lg hover:underline' href='#Who_i_am' title='Scroll page down')
-        | About me
-        icon-arrow-down(class='inline fill-current')
+  article.inline-flex.items-center.pl-2.sm_pl-3
+    a.text-sm.md_text-lg.hover_underline(href="#Who_i_am" title="Scroll page down")
+      | About me
+      arrow-down-icon.inline.fill-current
 
-    div(class='flex-grow')
+  div.flex-grow
 
-    article(class='flex sm:pr-2')
-      button(class='contact-button' tabindex="-1")
-        a(class='contact-button--content' :href='links.instagram' title='Open my Instagram profile page' target='_blank' rel='noopener noreferrer')
-          icon-instagram(class='w-5 h-5 fill-current sm:w-6 sm:h-6')
+  article.flex.sm_pr-2
+    button.contact-button(tabindex="-1")
+      a.contact-button--content(:href="links.instagram" title="Open my Instagram profile page" target="_blank" rel="noopener noreferrer")
+        instagram-icon.contact-button--icon
 
-      button(class='contact-button' tabindex="-1")
-        a(class='contact-button--content' :href='links.codepen' title='Open my Codepen profile page' target='_blank' rel='noopener noreferrer')
-          icon-codepen(class='w-5 h-5 fill-current sm:w-6 sm:h-6')
+    button.contact-button(tabindex="-1")
+      a.contact-button--content(href="links.codepen" title="Open my Codepen profile page" target="_blank" rel="noopener noreferrer")
+        codepen-icon.contact-button--icon
 
-      button(class='contact-button' tabindex="-1")
-        a(class='contact-button--content' :href='links.github' title='Open my Github profile page' target='_blank' rel='noopener noreferrer')
-          icon-github(class='w-5 h-5 fill-current sm:w-6 sm:h-6')
+    button.contact-button(tabindex="-1")
+      a.contact-button--content(:href="links.github" title="Open my Github profile page" target="_blank" rel="noopener noreferrer")
+        github-icon.contact-button--icon
 
-      button(class='contact-button' tabindex="-1")
-        a(class='contact-button--content' href='#Send-me-a-message' @click='focusContactForm' title='Send me an email')
-          icon-email(class='w-5 h-5 fill-current sm:w-6 sm:h-6')
+    button.contact-button(tabindex="-1")
+      a.contact-button--content(href="#Send-me-a-message" @click="focusContactForm" title="Send me an email")
+        email-icon.contact-button--icon
 
 </template>
 
 <script>
 
-import arrowDownIcon from 'icons/chevron-down'
-import instagramIcon from 'icons/instagram'
-import codepenIcon from 'icons/codepen'
-import githubIcon from 'icons/github-circle'
-import emailIcon from 'icons/email-outline'
+import arrowDownIcon from "@icons/chevron-down.svg"
+import instagramIcon from "@icons/instagram.svg"
+import codepenIcon from "@icons/codepen.svg"
+import githubIcon from "@icons/github.svg"
+import emailIcon from "@icons/email-outline.svg"
 
 export default {
-  name: 'page-navbar',
-
-  data () {
-    return {
-      links: {
-        instagram: 'https://instagram.com/felix.lucianodias',
-        codepen: 'https://codepen.io/FelixLuciano',
-        github: 'https://github.com/FelixLuciano'
-      }
-    }
-  },
-
-  methods: {
-    focusContactForm () {
-      setTimeout(() => this.$root.$emit('focusMessageForm'), 500)
-    }
-  },
-
+  emits: ["focusMessageForm"],
   components: {
-    'icon-arrow-down': arrowDownIcon,
-    'icon-instagram': instagramIcon,
-    'icon-codepen': codepenIcon,
-    'icon-github': githubIcon,
-    'icon-email': emailIcon
+    "arrow-down-icon": arrowDownIcon,
+    "instagram-icon": instagramIcon,
+    "codepen-icon": codepenIcon,
+    "github-icon": githubIcon,
+    "email-icon": emailIcon
+  },
+  setup(props, context) {
+    const links = {
+      instagram: "https://instagram.com/felix.lucianodias",
+      codepen: "https://codepen.io/FelixLuciano",
+      github: "https://github.com/FelixLuciano"
+    }
+
+    function focusContactForm () {
+      context.emit("focusMessageForm")
+    }
+
+    return {
+      links,
+      focusContactForm
+    }
   }
 }
 
 </script>
-
 <style lang="postcss">
 
-.contact-button
-  @apply bg-dark border border-solid border-dark transition-all duration-200 rounded-full
+@layer components
+  .contact-button
+    @apply bg-dark border border-solid border-dark transition-all duration-200 rounded-full
 
-  &:hover
-    @apply bg-gray-2 border-gray-3
+    &:hover
+      @apply bg-gray-700 border-gray-600
 
-.contact-button--content
-  @apply p-3 block
+  .contact-button--content
+    @apply p-3 block
+
+  .contact-button--icon
+    @apply w-5 h-5 fill-current sm_w-6 sm_h-6
 
 </style>

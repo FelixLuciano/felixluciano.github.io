@@ -1,28 +1,28 @@
 <template lang="pug">
 
-  page-section#Who_i_am(max-width='750px')
-    template(slot='title') WHO I AM
+pageSection#Who_i_am.max-w-screen-md
+  template(v-slot:title) WHO I AM
 
-    article
-      img#profile-photo(class='w-full' src='@/assets/me/profile-photo.jpg' alt='Profile photo')
+  article
+    img#profile-photo.w-full(src="../assets/me/profile-photo.jpg" alt="Profile photo")
 
-    article(class='flex pt-8 no-wrap')
-      letters
+  article#letters.pt-8.md_text-lg.no-wrapleading-relaxed
+    letters
 
 </template>
+<script setup>
 
-<script>
-
-import pageSection from '@/components/page-section.vue'
-import letters from '@/components/letters.vue'
-
-export default {
-  name: 'section-who-i-am',
-
-  components: {
-    'page-section': pageSection,
-    'letters': letters
-  }
-}
+import pageSection from "../components/page-section.vue"
+import { VueComponent as letters } from "../assets/me/letters.md"
 
 </script>
+<style lang="postcss">
+
+#letters
+  p
+    margin-bottom: .6rem
+
+  a
+    text-decoration: underline
+
+</style>
