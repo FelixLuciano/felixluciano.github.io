@@ -24,6 +24,6 @@ page-section#Programming.max-w-screen-lg
 
 import pageSection from "../components/page-section.vue"
 import publicationCard from "../components/publication-card.vue"
-import posts from "../assets/sections/programming.yml"
+import posts from "../assets/posts/programming.yml"
 
 </script>

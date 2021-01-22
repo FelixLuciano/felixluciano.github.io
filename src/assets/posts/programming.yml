@@ -1,27 +1,27 @@
 ---
   featured: 
     title: Mini Elementarium
-    source: programming/mini-elementarium_thumb.png
+    source: images/programming/mini-elementarium_thumb.png
     url: https://felixluciano.github.io/mini-elementarium/
     description: Mini Elementarium is an informative application about the elements of the periodic table with a colorful intuitive and multi linguistic interface for various devices.
 
   galery:
     - title: Inspirations
-      source: programming/parish_thumb.png
+      source: images/programming/parish_thumb.png
       url: https://codepen.io/collection/ANgakw/
       description: My collection of pens inspired by something else.
 
     - title: Canvas
-      source: programming/flame_thumb.png
+      source: images/programming/flame_thumb.png
       url: https://codepen.io/collection/XMOzxb
       description: My collection of generative illustrations made with HTML canvas.
 
     - title: Stickman
-      source: programming/stickman_thumb.png
+      source: images/programming/stickman_thumb.png
       url: https://codepen.io/FelixLuciano/pen/xpWwGm/left/
       description: Control the pose of the character by moving it's body parts to create many gestures.
 
     - title: Super CheckBox Challenge
-      source: programming/super-checkbox-challenge_thumb.png
+      source: images/programming/super-checkbox-challenge_thumb.png
       url: https://codepen.io/FelixLuciano/pen/zaWwVG/left/
       description: This is a game where the goal is to check all checkboxes. Seems easy?

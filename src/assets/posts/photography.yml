@@ -2,34 +2,34 @@
   featured:
     title: Conchas
     date: 2018
-    source: photography/conchas_thumb.jpg
-    zoomSource: photography/conchas.jpg
+    source: images/photography/conchas_thumb.jpg
+    zoomSource: images/photography/conchas.jpg
     alt: Shells seen through the neck of a glass bottle
     url: https://www.instagram.com/p/BhRqgVSnkyZ/
 
   galery:
     - title: Untitled
       date: 2018
-      source: photography/untitled-1_thumb.jpg
-      zoomSource: photography/untitled-1.jpg
+      source: images/photography/untitled-1_thumb.jpg
+      zoomSource: images/photography/untitled-1.jpg
       alt: Amusement park with bright colorful attractions
       url: https://www.instagram.com/p/Bk5jReknsze/
 
     - title: Em alumínio
       date: 2018
-      source: photography/em-aluminio_thumb.jpg
-      zoomSource: photography/em-aluminio.jpg
+      source: images/photography/em-aluminio_thumb.jpg
+      zoomSource: images/photography/em-aluminio.jpg
       alt: Origami of a fleur de lis made of aluminum
 
     - title: Untitled
       date: 2018
-      source: photography/untitled-2_thumb.jpg
-      zoomSource: photography/untitled-2.jpg
+      source: images/photography/untitled-2_thumb.jpg
+      zoomSource: images/photography/untitled-2.jpg
       alt: Frame hanging over a torn wall
 
     - title: Untitled
       date: 2018
-      source: photography/untitled-3_thumb.jpg
-      zoomSource: photography/untitled-3.jpg
+      source: images/photography/untitled-3_thumb.jpg
+      zoomSource: images/photography/untitled-3.jpg
       alt: Macroscopic view of a feather
       url: https://www.instagram.com/p/BulilBVlPSX/

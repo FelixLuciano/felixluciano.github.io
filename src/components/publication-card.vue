@@ -2,9 +2,9 @@
 
 figure
   a(:href="post.url" v-if="!post.zoomSource && post.url" title="Check out this publication" target="_blank" rel="noopener noreferrer")
-    img.w-full(:src="thumb" :alt="post.alt")
+    img.w-full(:src="post.source" :alt="post.alt")
 
-  img.w-full(:src="thumb" :data-zoom-src="zoom" :alt="post.alt" v-else)
+  img.w-full(:src="post.source" :data-zoom-src="post.zoomSource" :alt="post.alt" v-else)
 
   figcaption.mt-2
     strong
@@ -32,11 +32,8 @@ export default {
       required: true
     }
   },
-  setup({ dataPost }, context) {
-    const thumb = dataPost.source
-    const zoom = dataPost.zoomSource
-
-    if (dataPost.zoomSource) {
+  setup({ dataPost: post }) {
+    if (post.zoomSource) {
       const instance = getCurrentInstance()
       onMounted(() => {
         const imageNode = instance.vnode.el.querySelector("img")
@@ -48,9 +45,7 @@ export default {
     }
 
     return {
-      post: dataPost,
-      thumb,
-      zoom
+      post
     }
   }
 }
