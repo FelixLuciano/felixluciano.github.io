@@ -1,18 +1,17 @@
 <template lang="pug">
 
 span
-  quoteOpenIcon.inline.fill-current
+  quote-open-icon.inline.fill-current
 
   span(v-text="text")
   span#typing-cursor(v-if="showCursor") _
 
-  quoteOpenIcon.inline.fill-current.transform.rotate-180
+  quote-open-icon.inline.fill-current.transform.rotate-180
 
 </template>
 <script>
 
 import { ref } from "vue"
-
 import quoteOpenIcon from "@icons/format-quote-open.svg"
 
 export default {

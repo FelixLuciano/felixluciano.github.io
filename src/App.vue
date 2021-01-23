@@ -1,21 +1,21 @@
 <template lang="pug">
 
-pageHeader
-sectionWhoIAm
-sectionPhotograpy
-sectionPrograming
-sectionSendMeAMessage
-pageFooter
+page-header
+section-about-me
+section-photograpy
+section-programing
+section-contact
+page-footer
 
 </template>
 <script setup>
 
-import pageHeader from "./sections/page-header.vue"
-import sectionWhoIAm from "./sections/who-i-am.vue"
-import sectionPhotograpy from "./sections/photography.vue"
-import sectionPrograming from "./sections/programming.vue"
-import sectionSendMeAMessage from "./sections/send-me-a-message.vue"
-import pageFooter from "./sections/page-footer.vue"
+import pageHeader from "./components/header.vue"
+import sectionAboutMe from "./components/section-about-me.vue"
+import sectionPhotograpy from "./components/section-photography.vue"
+import sectionPrograming from "./components/section-programming.vue"
+import sectionContact from "./components/section-contact.vue"
+import pageFooter from "./components/footer.vue"
 
 </script>
 <style lang="postcss">

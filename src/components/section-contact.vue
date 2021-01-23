@@ -1,14 +1,14 @@
 <template lang="pug">
 
-pageSection#Send-me-a-message.max-w-screen-md
+content-section#Contact.max-w-screen-md
   template(v-slot:title) SEND ME A MESSAGE
 
   form.p-0(:action="form.apiUrl" method="post" target="_blank" @submit.prevent="submit" v-show="!info.display")
     input.w-full.p-3.bg-white.disabled_opacity-50(type="text" name="contact" placeholder="Your contact" required="true" v-model="form.contact" :disabled="form.disabled")
     br
-    autosizing-textarea.appearance-none.relative.w-full.min-h-32.p-3.mt-2.bg-white.disabled_opacity-50.leading-relaxed(name="message" placeholder="Hey, Luciano!\n\nI am..." required="true" v-model="form.message" :disabled="form.disabled")
+    autosizing-textarea.appearance-none.w-full.min-h-32.p-3.mt-2.bg-white.leading-relaxed.relative.disabled_opacity-50(name="message" placeholder="Hey, Luciano!\n\nI am..." required="true" v-model="form.message" :disabled="form.disabled")
     br
-    input.ml-3.mt-2.text-lg.underlinebg-transparent.hover_underline.cursor-pointer(type="submit" value="Send" :disabled="form.disabled")
+    input.ml-2.mt-2.text-lg.underline.bg-transparent.cursor-pointer(type="submit" value="Send" :disabled="form.disabled")
 
   section.text-center(v-show="info.display")
     strong.text-2xl {{ info.message.title }}
@@ -22,8 +22,8 @@ pageSection#Send-me-a-message.max-w-screen-md
 <script setup>
 
 import { reactive, computed } from "vue"
-import pageSection from "../components/page-section.vue"
-import autosizingTextarea from "../components/autosizing-textarea.vue"
+import contentSection from "./section.vue"
+import autosizingTextarea from "./autosizing-textarea.vue"
 
 const form = reactive({
   apiUrl: "https://app.lucianofelix.com.br/send-message/",

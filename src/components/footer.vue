@@ -11,6 +11,6 @@ footer#page-footer.flex.flex-wrap.items-center.px-4.pt-16.pb-4
 
 <script setup>
 
-import logo from "../assets/branding/logo-dark.svg"
+import logo from "../static/svg/logo-dark.svg"
 
 </script>

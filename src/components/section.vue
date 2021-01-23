@@ -12,16 +12,11 @@ section.container.px-1.pt-6.mx-auto.md_px-2
     slot(name="footer")
 
 </template>
-
 <script>
 
 export default {
   props: {
-    slots: [ "title", "footer" ],
-    maxWidth: {
-      type: String,
-      default: "1000px"
-    }
+    slots: [ "title", "footer" ]
   }
 }
 

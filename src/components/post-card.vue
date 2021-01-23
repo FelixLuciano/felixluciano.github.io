@@ -20,9 +20,7 @@ figure
 </template>
 <script>
 
-import * as vue from "vue"
-
-import { ref, getCurrentInstance, onMounted } from "vue"
+import { getCurrentInstance, onMounted } from "vue"
 import MediumZoom from "medium-zoom"
 
 export default {

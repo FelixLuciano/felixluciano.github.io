@@ -16,7 +16,7 @@ export default {
   setup(props, { emit }) {
     function updateSize(target) {
       target.style.height = "auto"
-      target.style.height = target.scrollHeight + "px"
+      target.style.height = (target.scrollHeight + 16) + "px"
     }
 
     function input({target}) {

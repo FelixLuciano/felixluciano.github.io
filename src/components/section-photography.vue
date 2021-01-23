@@ -1,13 +1,13 @@
 <template lang="pug">
 
-pageSection#Photography.max-w-screen-lg
+content-section#Photography.max-w-screen-lg
   template(v-slot:title) PHOTOGRAPHY
 
   section.grid.grid-cols-2.gap-1.md_gap-3
-    publicationCard.col-span-2(:data-post="posts.featured")
+    post-card.col-span-2(:data-post="posts.featured")
 
     template(v-for="post in posts.galery")
-      publication-card(:data-post="post")
+      post-card(:data-post="post")
 
   template(v-slot:footer)
     | Click to magnify. See more photos on
@@ -18,9 +18,9 @@ pageSection#Photography.max-w-screen-lg
 </template>
 <script setup>
 
-import pageSection from "../components/page-section.vue"
-import publicationCard from "../components/publication-card.vue"
-import posts from "../assets/posts/photography.yml"
+import contentSection from "./section.vue"
+import postCard from "./post-card.vue"
+import posts from "../static/posts/photography.yml"
 
 </script>
 <style lang="postcss">
