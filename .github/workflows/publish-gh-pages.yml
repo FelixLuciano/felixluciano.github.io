@@ -4,6 +4,7 @@ on:
     types: [ published ]
 jobs:
   publish:
+    environment: github-pages
     runs-on: ubuntu-latest
     steps:
       -
