@@ -1,4 +1,4 @@
-![Profile photo](src/assets/me/profile-photo.jpg)
+![Profile photo](public/images/profile-photo.webp)
 
 I am Luciano Felix, a student starting my career in computer engineering...
 
