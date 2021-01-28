@@ -21,7 +21,7 @@ figure
 <script>
 
 import { getCurrentInstance, onMounted } from "vue"
-import MediumZoom from "medium-zoom"
+import MediumZoom from "https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.esm.js"
 
 export default {
   props: {

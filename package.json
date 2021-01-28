@@ -1,6 +1,6 @@
 {
   "name": "lucianofelix.com.br",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -8,13 +8,12 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
-    "medium-zoom": "^1.0.6",
     "vue": "^3.0.5"
   },
   "devDependencies": {
     "@mdi/svg": "^5.9.55",
     "@rollup/plugin-yaml": "^3.0.0",
-    "@vitejs/plugin-vue": "^1.1.1",
+    "@vitejs/plugin-vue": "^1.1.2",
     "@vue/compiler-sfc": "^3.0.5",
     "autoprefixer": "^10.2.3",
     "postcss": "^8.2.4",
@@ -25,7 +24,7 @@
     "sugarss": "^3.0.3",
     "svgo": "^1.3.2",
     "tailwindcss": "^2.0.2",
-    "vite": "^2.0.0-beta.44",
+    "vite": "^2.0.0-beta.50",
     "vite-plugin-markdown": "^2.0.0-3",
     "vite-svg-loader": "git+https://github.com/FelixLuciano/vite-svg-loader.git"
   }
