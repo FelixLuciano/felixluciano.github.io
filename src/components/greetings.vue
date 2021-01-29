@@ -11,7 +11,7 @@ span
 </template>
 <script>
 
-import { ref } from "vue"
+import { ref, computed } from "vue"
 import quoteOpenIcon from "@icons/format-quote-open.svg"
 
 export default {
@@ -24,13 +24,21 @@ export default {
     const showCursor = ref(false)
 
     const sleep = time => new Promise(resolve => setTimeout(resolve, time))
+    const getRandomTick = () => {
+        const randomMs = 100 * Math.random()
+        return randomMs < 50 ? 10 : randomMs
+    }
 
     async function type (input) {
-      for (let character of input) {  
-        const randomMs = 100 * Math.random()
-        const interval = randomMs < 50 ? 10 : randomMs
+      for (let character of input) {
         text.value += character
-        await sleep(interval)
+        await sleep(getRandomTick())
+      }
+    }
+    async function erase (input) {
+      for (let character of input) {
+        text.value = text.value.slice(0, text.value.length -1)
+        await sleep(getRandomTick())
       }
     }
 
@@ -42,9 +50,15 @@ export default {
       await sleep(1000)
       await type("Hello")
       await sleep(500)
-      await type(", i am Luciano")
+      await type(", i'm")
+      await sleep(250)
+      await erase("'m")
+      await type(" am Luciano")
       await sleep(750)
-      await type(" and on this page you can know more about me")
+      await type(" and on this page you will")
+      await sleep(100)
+      await erase("will")
+      await type(" can know more about me")
       await sleep(1000)
       await type(" and my creations")
       await sleep(1000)
