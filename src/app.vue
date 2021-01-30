@@ -10,12 +10,20 @@ page-footer
 </template>
 <script setup>
 
+import { ref } from "vue"
 import pageHeader from "./components/header.vue"
 import sectionAboutMe from "./components/section-about-me.vue"
 import sectionPhotograpy from "./components/section-photography.vue"
 import sectionPrograming from "./components/section-programming.vue"
 import sectionContact from "./components/section-contact.vue"
 import pageFooter from "./components/footer.vue"
+
+const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+const isDark = ref(mediaQuery.matches)
+
+mediaQuery.addEventListener("change", ({ matches }) => {
+  isDark.value = matches
+})
 
 </script>
 <style lang="postcss">
@@ -24,7 +32,7 @@ html
     scroll-behavior: smooth
 
 body
-    @apply bg-light text-dark font-sans
+    @apply bg-light text-dark dark_bg-gray-700 dark_text-white font-sans
 
 ::selection
     @apply bg-gray-300

@@ -4,9 +4,9 @@ content-section#Contact.max-w-screen-md
   template(v-slot:title) SEND ME A MESSAGE
 
   form.p-0(:action="form.apiUrl" method="post" target="_blank" @submit.prevent="submit" v-show="!info.display")
-    input.w-full.p-3.bg-white.disabled_opacity-50(type="text" name="contact" placeholder="Your contact" required="true" v-model="form.contact" :disabled="form.disabled")
+    input.w-full.p-3.bg-white.dark_bg-gray-300.placeholder-opacity-50.disabled_opacity-50(type="text" name="contact" placeholder="Your contact" required="true" v-model="form.contact" :disabled="form.disabled")
     br
-    autosizing-textarea.appearance-none.w-full.min-h-32.p-3.mt-2.bg-white.leading-relaxed.relative.disabled_opacity-50(name="message" placeholder="Hey, Luciano!\n\nI am..." required="true" v-model="form.message" :disabled="form.disabled")
+    autosizing-textarea.appearance-none.w-full.min-h-32.p-3.mt-2.bg-white.dark_bg-gray-300.leading-relaxed.relative.disabled_opacity-50(name="message" placeholder="Hey, Luciano!\n\nI am..." required="true" v-model="form.message" :disabled="form.disabled")
     br
     input.ml-2.mt-2.text-lg.underline.bg-transparent.cursor-pointer(type="submit" value="Send" :disabled="form.disabled")
 

@@ -21,7 +21,7 @@ figure
 <script>
 
 import { getCurrentInstance, onMounted } from "vue"
-import MediumZoom from "https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.esm.min.js"
+import MediumZoom from "medium-zoom"
 
 export default {
   props: {
@@ -37,7 +37,7 @@ export default {
         const imageNode = instance.vnode.el.querySelector("img")
         
         MediumZoom(imageNode, {
-          background: "#EEE"
+          background: false
         })
       })
     }
@@ -49,3 +49,9 @@ export default {
 }
 
 </script>
+<style lang="postcss">
+
+.medium-zoom-overlay
+  @apply bg-light dark_bg-gray-800
+
+</style>

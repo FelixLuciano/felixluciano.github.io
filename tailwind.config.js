@@ -5,6 +5,7 @@ const config = require("tailwindcss/defaultConfig")
 module.exports = {
   purge: ["./index.html", "./src/**/*.{vue,js}"],
   separator: "_",
+  darkMode: "media",
   theme: {
     extend: {
       colors: {
@@ -19,7 +20,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      opacity: ["disabled"],
+      opacity: ["disabled"]
     }
   }
 }

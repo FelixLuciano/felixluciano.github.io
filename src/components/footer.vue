@@ -2,7 +2,8 @@
 
 footer#page-footer.flex.flex-wrap.items-center.px-4.pt-16.pb-4
   article.w-full.text-center
-    logo.w-16.inline-block
+    logoLight.w-16.inline-block(v-if="$root.isDark")
+    logoDark.w-16.inline-block(v-else)
 
   article.w-full.py-8.text-center
     strong &copy; 2021 LUCIANO FELIX - All rights reserved
@@ -11,6 +12,7 @@ footer#page-footer.flex.flex-wrap.items-center.px-4.pt-16.pb-4
 
 <script setup>
 
-import logo from "../static/svg/logo-dark.svg"
+import logoDark from "../static/svg/logo-dark.svg"
+import logoLight from "../static/svg/logo-light.svg"
 
 </script>

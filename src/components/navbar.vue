@@ -23,18 +23,18 @@ nav.flex.items-center
         github-icon.contact-button--icon
 
     button.contact-button(tabindex="-1")
-      a.contact-button--content(href="#Contact" title="Send me an email")
+      a.contact-button--content(href="#Contact" title="Send me a message")
         email-icon.contact-button--icon
 
 </template>
 
 <script setup>
 
-import arrowDownIcon from "@icons/chevron-down.svg"
+import arrowDownIcon from "@icons/menu-down.svg"
 import instagramIcon from "@icons/instagram.svg"
 import codepenIcon from "@icons/codepen.svg"
 import githubIcon from "@icons/github.svg"
-import emailIcon from "@icons/email-outline.svg"
+import emailIcon from "@icons/message-text.svg"
 
 
 const links = {

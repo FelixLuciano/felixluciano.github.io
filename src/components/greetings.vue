@@ -11,7 +11,7 @@ span
 </template>
 <script>
 
-import { ref, computed } from "vue"
+import { ref } from "vue"
 import quoteOpenIcon from "@icons/format-quote-open.svg"
 
 export default {
@@ -44,14 +44,14 @@ export default {
 
     async function init() {
       context.emit("typingStarted")
-      await sleep(1000)
+      await sleep(800)
       text.value = ""
       showCursor.value = true
-      await sleep(1000)
+      await sleep(800)
       await type("Hello")
       await sleep(500)
       await type(", i'm")
-      await sleep(250)
+      await sleep(100)
       await erase("'m")
       await type(" am Luciano")
       await sleep(750)
@@ -59,9 +59,9 @@ export default {
       await sleep(100)
       await erase("will")
       await type(" can know more about me")
-      await sleep(1000)
+      await sleep(750)
       await type(" and my creations")
-      await sleep(1000)
+      await sleep(800)
       context.emit("typingEnded")
       await sleep(1000)
       showCursor.value = false
