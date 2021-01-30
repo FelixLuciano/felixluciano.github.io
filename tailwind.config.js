@@ -1,10 +1,11 @@
 const colors = require("tailwindcss/colors")
 const config = require("tailwindcss/defaultConfig")
 
-
 module.exports = {
   purge: ["./index.html", "./src/**/*.{vue,js}"],
+
   darkMode: "media",
+
   theme: {
     extend: {
       colors: {
@@ -17,6 +18,7 @@ module.exports = {
       }
     }
   },
+
   variants: {
     extend: {
       opacity: ["disabled"]
