@@ -29,15 +29,15 @@ mediaQuery.addEventListener("change", ({ matches }) => {
 <style lang="postcss">
 
 html
-    scroll-behavior: smooth
+  scroll-behavior: smooth
 
 body
-    @apply bg-light text-dark dark:bg-gray-700 dark:text-white font-sans
+  @apply bg-light text-dark dark:bg-gray-700 dark:text-white font-sans
 
 ::selection
-    @apply bg-gray-300
+  @apply bg-gray-300
 
 #app
-    @apply w-full h-full absolute
+  @apply w-full h-full absolute
 
 </style>
