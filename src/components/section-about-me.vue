@@ -1,19 +1,17 @@
 <template lang="pug">
 
-content-section#About-me.max-w-screen-md
-  template(v-slot:title) WHO I AM
-
-  article
-    img#profile-photo(src="/images/profile-photo.webp" alt="Profile photo")
-
-  article#letters.pt-8.md_text-lg.no-wrap
+content-section#About-me(class="max-w-screen-md")
+  template(v-slot:title)
+    | WHO I AM
+  
+  article#letters(class="md:text-lg")
     letters
 
 </template>
 <script setup>
 
 import contentSection from "./section.vue"
-import { VueComponent as letters } from "../static/docs/letters.md"
+import { VueComponent as letters } from "../static/docs/about-me.md"
 
 </script>
 <style lang="postcss">
@@ -21,10 +19,13 @@ import { VueComponent as letters } from "../static/docs/letters.md"
 #letters
   @apply leading-8 !important
 
+  img:first-child
+    @apply mb-8
+
   p
-    margin-bottom: .6rem
+    @apply mb-2
 
   a
-    text-decoration: underline
+    @apply underline
 
 </style>

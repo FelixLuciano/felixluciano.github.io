@@ -4,7 +4,6 @@ const config = require("tailwindcss/defaultConfig")
 
 module.exports = {
   purge: ["./index.html", "./src/**/*.{vue,js}"],
-  separator: "_",
   darkMode: "media",
   theme: {
     extend: {

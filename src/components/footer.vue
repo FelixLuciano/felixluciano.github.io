@@ -1,12 +1,19 @@
 <template lang="pug">
 
-footer#page-footer.flex.flex-wrap.items-center.px-4.pt-16.pb-4
-  article.w-full.text-center
-    logoLight.w-16.inline-block(v-if="$root.isDark")
-    logoDark.w-16.inline-block(v-else)
+footer#page-footer(class="flex flex-wrap items-center px-4 pt-16 pb-4")
+  article(class="w-full text-center")
+    logoLight(
+      class="inline-block w-16"
+      v-if="$root.isDark"
+    )
+    logoDark(
+      class="inline-block w-16"
+      v-else
+    )
 
-  article.w-full.py-8.text-center
-    strong &copy; 2021 LUCIANO FELIX - All rights reserved
+  article(class="w-full py-8 text-center")
+    strong
+      | &copy; 2021 LUCIANO FELIX - All rights reserved
 
 </template>
 

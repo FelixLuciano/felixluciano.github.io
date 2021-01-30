@@ -1,10 +1,14 @@
 <template lang="pug">
 
-content-section#Photography.max-w-screen-lg
-  template(v-slot:title) PHOTOGRAPHY
+content-section#Photography(class="max-w-screen-lg")
+  template(v-slot:title)
+    | PHOTOGRAPHY
 
-  section.grid.grid-cols-2.gap-1.md_gap-3
-    post-card.col-span-2(:data-post="posts.featured")
+  section(class="grid grid-cols-2 gap-1 md_gap-3")
+    post-card(
+      class="col-span-2"
+      :data-post="posts.featured"
+    )
 
     template(v-for="post in posts.galery")
       post-card(:data-post="post")
@@ -12,7 +16,14 @@ content-section#Photography.max-w-screen-lg
   template(v-slot:footer)
     | Click to magnify. See more photos on
     |
-    a.underline(href="https://instagram.com/felix.lucianodias" title="Open my Instagram profile page" target="_blank" rel="noopener noreferrer") my Instagram
+    a(
+      class="underline"
+      href="https://instagram.com/felix.lucianodias"
+      title="Open my Instagram profile page"
+      target="_blank"
+      rel="noopener noreferrer"
+    )
+      | my Instagram
     | .
 
 </template>

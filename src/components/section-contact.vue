@@ -1,22 +1,62 @@
 <template lang="pug">
 
-content-section#Contact.max-w-screen-md
-  template(v-slot:title) SEND ME A MESSAGE
+content-section#Contact(class="max-w-screen-md")
+  template(v-slot:title)
+    | SEND ME A MESSAGE
 
-  form.p-0(:action="form.apiUrl" method="post" target="_blank" @submit.prevent="submit" v-show="!info.display")
-    input.w-full.p-3.bg-white.dark_bg-gray-300.placeholder-opacity-50.disabled_opacity-50(type="text" name="contact" placeholder="Your contact" required="true" v-model="form.contact" :disabled="form.disabled")
-    br
-    autosizing-textarea.appearance-none.w-full.min-h-32.p-3.mt-2.bg-white.dark_bg-gray-300.leading-relaxed.relative.disabled_opacity-50(name="message" placeholder="Hey, Luciano!\n\nI am..." required="true" v-model="form.message" :disabled="form.disabled")
-    br
-    input.ml-2.mt-2.text-lg.underline.bg-transparent.cursor-pointer(type="submit" value="Send" :disabled="form.disabled")
+  form(
+    class="p-0"
+    :action="form.apiUrl"
+    method="post"
+    target="_blank"
+    @submit.prevent="submit"
+    v-show="!info.display"
+  )
+    input(
+      class="block w-full p-3 bg-white dark:bg-gray-200 dark:text-dark disabled:opacity-50"
+      type="text"
+      name="contact"
+      placeholder="Your contact"
+      required="true"
+      v-model="form.contact"
+      :disabled="form.disabled"
+    )
+    autosizing-textarea(
+      class="relative block w-full p-3 pb-12 mt-2 leading-relaxed bg-white appearance-none min-h-32 dark:bg-gray-200 dark:text-dark disabled:opacity-50"
+      name="message"
+      placeholder="Hey, Luciano!\n\nI am..."
+      required="true"
+      v-model="form.message"
+      :disabled="form.disabled"
+    )
+    input(
+      class="block mt-2 ml-2 text-lg underline bg-transparent cursor-pointer "
+      type="submit"
+      value="Send"
+      :disabled="form.disabled"
+    )
 
-  section.text-center(v-show="info.display")
-    strong.text-2xl {{ info.message.title }}
+  section(
+    class="text-center"
+    v-show="info.display"
+  )
+    strong(
+      class="text-2xl"
+      v-text="info.message.title"
+    )
     br
-    span.text-lg {{ info.message.text }}
+    span(
+      class="text-lg"
+      v-text="info.message.text"
+    )
     br
     br
-    a.underline(href="#Contact" @click="info.display=false") {{ info.message.action }}
+    a(
+      class="underline"
+      href="#Contact"
+      @click="info.display=false"
+      v-text="info.message.action"
+    )
 
 </template>
 <script setup>

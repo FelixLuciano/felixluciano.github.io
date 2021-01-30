@@ -1,21 +1,44 @@
 <template lang="pug">
 
 figure
-  a(:href="post.url" v-if="!post.zoomSource && post.url" title="Check out this publication" target="_blank" rel="noopener noreferrer")
-    img.w-full(:src="post.source" :alt="post.alt")
+  a(
+    :href="post.url"
+    v-if="!post.zoomSource && post.url"
+    title="Check out this publication"
+    target="_blank"
+    rel="noopener noreferrer"
+  )
+    img(
+      :src="post.source"
+      :alt="post.alt"
+    )
 
-  img.w-full(:src="post.source" :data-zoom-src="post.zoomSource" :alt="post.alt" v-else)
+  img(
+    :src="post.source"
+    :data-zoom-src="post.zoomSource"
+    :alt="post.alt"
+    v-else
+  )
 
-  figcaption.mt-2
+  figcaption(class="mt-2")
     strong
-      a.underline(:href="post.url" v-if="post.url") {{ post.title }}
-      template(v-else) {{ post.title }}
+      a(
+        class="underline"
+        :href="post.url"
+        v-text="post.title"
+        v-if="post.url"
+      )
+      template(v-else)
+        | {{ post.title }}
 
     template(v-if="post.date")
       |
       | - {{ post.date }}
 
-    p(v-if="post.description") {{ post.description }}
+    p(
+      v-text="post.description"
+      v-if="post.description"
+    )
 
 </template>
 <script>
@@ -52,6 +75,6 @@ export default {
 <style lang="postcss">
 
 .medium-zoom-overlay
-  @apply bg-light dark_bg-gray-800
+  @apply bg-light dark:bg-gray-700
 
 </style>

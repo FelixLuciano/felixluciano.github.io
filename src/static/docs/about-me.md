@@ -1,3 +1,5 @@
+![Profile photo](/images/profile-photo.webp)
+
 I am Luciano Felix, a student starting my career in computer engineering. I have been studying [programming](#Programming) for over 6 years, and I create publications on Codepen with the knowledge I have been acquiring over time.
 
 On Instagram I publish [photographs](#Photography) that explore a subjective perspective of objects through the distortion of their meanings. I have recorded in my storyes some of the exhibitions I visited in the editions of [SP-Arte](https://www.sp-arte.com/), the largest art fair in latin america.

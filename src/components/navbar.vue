@@ -1,33 +1,69 @@
 <template lang="pug">
 
-nav.flex.items-center
-
-  article.inline-flex.items-center.pl-2.sm_pl-3
-    a.text-sm.md_text-lg.hover_underline(href="#About-me" title="Scroll page down")
+nav(class="flex items-center")
+  article(class="inline-flex items-center pl-2 sm:pl-3")
+    a(
+      class="text-sm md:text-lg hover:underline"
+      href="#About-me"
+      title="Scroll page down"
+    )
       | About me
-      arrow-down-icon.inline.fill-current
+      arrow-down-icon(class="inline fill-current")
 
-  div.flex-grow
+  div(class="flex-grow")
 
-  article.flex.sm_pr-2
-    button.contact-button(tabindex="-1")
-      a.contact-button--content(:href="links.instagram" title="Open my Instagram profile page" target="_blank" rel="noopener noreferrer")
-        instagram-icon.contact-button--icon
+  article(class="flex sm:pr-2")
+    button(
+      class="contact-button"
+      tabindex="-1"
+    )
+      a(
+        class="contact-button__content"
+        :href="links.instagram"
+        title="Open my Instagram profile page"
+        target="_blank"
+        rel="noopener noreferrer"
+      )
+        instagram-icon(class="contact-button__icon")
 
-    button.contact-button(tabindex="-1")
-      a.contact-button--content(href="links.codepen" title="Open my Codepen profile page" target="_blank" rel="noopener noreferrer")
-        codepen-icon.contact-button--icon
+    button(
+      class="contact-button"
+      tabindex="-1"
+    )
+      a(
+        class="contact-button__content"
+        :href="links.codepen"
+        title="Open my Codepen profile page"
+        target="_blank"
+        rel="noopener noreferrer"
+      )
+        codepen-icon(class="contact-button__icon")
 
-    button.contact-button(tabindex="-1")
-      a.contact-button--content(:href="links.github" title="Open my Github profile page" target="_blank" rel="noopener noreferrer")
-        github-icon.contact-button--icon
+    button(
+      class="contact-button"
+      tabindex="-1"
+    )
+      a(
+        class="contact-button__content"
+        :href="links.github"
+        title="Open my Github profile page"
+        target="_blank"
+        rel="noopener noreferrer"
+      )
+        github-icon(class="contact-button__icon")
 
-    button.contact-button(tabindex="-1")
-      a.contact-button--content(href="#Contact" title="Send me a message")
-        email-icon.contact-button--icon
+    button(
+      class="contact-button"
+      tabindex="-1"
+    )
+      a(
+        class="contact-button__content"
+        href="#Contact"
+        title="Send me a message"
+      )
+        email-icon(class="contact-button__icon")
 
 </template>
-
 <script setup>
 
 import arrowDownIcon from "@icons/menu-down.svg"
@@ -36,11 +72,10 @@ import codepenIcon from "@icons/codepen.svg"
 import githubIcon from "@icons/github.svg"
 import emailIcon from "@icons/message-text.svg"
 
-
 const links = {
   instagram: "https://instagram.com/felix.lucianodias",
   codepen: "https://codepen.io/FelixLuciano",
-  github: "https://github.com/FelixLuciano"
+  github: "https://github.com/FelixLuciano",
 }
 
 </script>
@@ -53,10 +88,10 @@ const links = {
     &:hover
       @apply bg-opacity-10 border-opacity-20
 
-  .contact-button--content
+  .contact-button__content
     @apply p-3 block
 
-  .contact-button--icon
-    @apply w-5 sm_w-6 h-5 sm_h-6 fill-current
+  .contact-button__icon
+    @apply w-5 sm:w-6 h-5 sm:h-6 fill-current
 
 </style>

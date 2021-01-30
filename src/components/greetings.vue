@@ -1,12 +1,13 @@
 <template lang="pug">
 
 span
-  quote-open-icon.inline.fill-current
+  quote-open-icon(class="inline fill-current")
 
   span(v-text="text")
-  span#typing-cursor(v-if="showCursor") _
+  span#typing-cursor(v-if="showCursor")
+    | _
 
-  quote-open-icon.inline.fill-current.transform.rotate-180
+  quote-open-icon(class="inline transform rotate-180 fill-current")
 
 </template>
 <script>

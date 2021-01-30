@@ -32,7 +32,7 @@ html
     scroll-behavior: smooth
 
 body
-    @apply bg-light text-dark dark_bg-gray-700 dark_text-white font-sans
+    @apply bg-light text-dark dark:bg-gray-700 dark:text-white font-sans
 
 ::selection
     @apply bg-gray-300

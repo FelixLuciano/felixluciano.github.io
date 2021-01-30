@@ -1,14 +1,21 @@
 <template lang="pug">
 
-section.container.px-1.pt-6.mx-auto.md_px-2
-
-  article.w-full.px-4_py-12.text-center.md_py-16(v-if="$slots.title")
-    strong.text-3xl.md_text-4xl
+section(
+  class="container px-1 pt-6 mx-auto md:px-2"
+)
+  article(
+    class="w-full px-4 py-12 text-center md:py-16"
+    v-if="$slots.title"
+  )
+    strong(class="text-3xl md:text-4xl")
       slot(name="title")
 
   slot
 
-  article.w-full.pt-8.text-center(v-if="$slots.footer")
+  article(
+    class="w-full pt-8 text-center "
+    v-if="$slots.footer"
+  )
     slot(name="footer")
 
 </template>

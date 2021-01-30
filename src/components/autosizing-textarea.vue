@@ -1,6 +1,9 @@
 <template lang="pug">
 
-textarea.overflow-y-hidden.resize-none(:value="modelValue" @input="input")
+textarea(
+  class="overflow-y-hidden resize-none"
+  :value="modelValue" @input="input"
+)
 
 </template>
 <script>
@@ -16,7 +19,7 @@ export default {
   setup(props, { emit }) {
     function updateSize(target) {
       target.style.height = "auto"
-      target.style.height = (target.scrollHeight + 16) + "px"
+      target.style.height = target.scrollHeight + "px"
     }
 
     function input({target}) {

@@ -1,10 +1,14 @@
 <template lang="pug">
 
-content-section#Programming.max-w-screen-lg
-  template(v-slot:title) PROGRAMMING
+content-section#Programming(class="max-w-screen-lg")
+  template(v-slot:title)
+    | PROGRAMMING
 
-  section.grid.grid-cols-2.gap-1.md_gap-3
-    post-card.col-span-2(:data-post="posts.featured")
+  section(class="grid grid-cols-2 gap-1 md_gap-3")
+    post-card(
+      class="col-span-2"
+      :data-post="posts.featured"
+    )
 
     template(v-for="post in posts.galery")
       post-card(:data-post="post")
@@ -12,11 +16,23 @@ content-section#Programming.max-w-screen-lg
   template(v-slot:footer)
     | See more pens on
     |
-    a.underline(href="https://codepen.io/FelixLuciano" target="_blank" rel="noopener noreferrer") my Codepen
+    a(
+      class="underline"
+      href="https://codepen.io/FelixLuciano"
+      target="_blank"
+      rel="noopener noreferrer"
+    )
+      | my Codepen
     |
     | and projects on
     |
-    a.underline(href="https://github.com/FelixLuciano" target="_blank" rel="noopener noreferrer") my Github
+    a(
+      class="underline"
+      href="https://github.com/FelixLuciano"
+      target="_blank"
+      rel="noopener noreferrer"
+    )
+      | my Github
     | .
 
 </template>
