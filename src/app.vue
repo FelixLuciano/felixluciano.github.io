@@ -37,6 +37,9 @@ body
 ::selection
   @apply bg-gray-300
 
+  @media (prefers-color-scheme: dark)
+    @apply bg-gray-500
+
 #app
   @apply w-full h-full absolute
 
