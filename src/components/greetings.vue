@@ -51,7 +51,7 @@ export default {
       await sleep(800)
       await type("Hello")
       await sleep(500)
-      await type(", i'm")
+      await type(", I'm")
       await sleep(100)
       await erase("'m")
       await type(" am Luciano")
