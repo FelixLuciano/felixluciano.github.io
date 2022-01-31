@@ -1,35 +1,32 @@
 ---
-  featured:
-    title: Conchas
-    date: 2018
-    source: images/photography/conchas_thumb.webp
-    zoomSource: images/photography/conchas.webp
-    alt: Shells seen through the neck of a glass bottle
-    url: https://www.instagram.com/p/BhRqgVSnkyZ/
+featured:
+  title: Untitled
+  date: 2021
+  source: images/photography/untitled-1_thumb.webp
+  zoomSource: images/photography/untitled-1.webp
+  alt: Logic circuit connections of a microscopic processor.
 
-  galery:
-    - title: Untitled
-      date: 2018
-      source: images/photography/untitled-1_thumb.webp
-      zoomSource: images/photography/untitled-1.webp
-      alt: Amusement park with bright colorful attractions
-      url: https://www.instagram.com/p/Bk5jReknsze/
+galery:
+- title: Untitled
+  date: 2021
+  source: images/photography/untitled-2_thumb.webp
+  zoomSource: images/photography/untitled-2.webp
+  alt: Metal with grooves and engraving of a three-digit number partially visible under magnifying glass.
 
-    - title: Em alumínio
-      date: 2018
-      source: images/photography/em-aluminio_thumb.webp
-      zoomSource: images/photography/em-aluminio.webp
-      alt: Origami of a fleur de lis made of aluminum
+- title: Conchas
+  date: 2018
+  source: images/photography/conchas_thumb.webp
+  zoomSource: images/photography/conchas.webp
+  alt: Shells seen through the neck of a glass bottle.
 
-    - title: Untitled
-      date: 2018
-      source: images/photography/untitled-2_thumb.webp
-      zoomSource: images/photography/untitled-2.webp
-      alt: Frame hanging over a torn wall
+- title: Untitled
+  date: 2018
+  source: images/photography/untitled-3_thumb.webp
+  zoomSource: images/photography/untitled-3.webp
+  alt: Amusement park with bright colorful attractions.
 
-    - title: Untitled
-      date: 2018
-      source: images/photography/untitled-3_thumb.webp
-      zoomSource: images/photography/untitled-3.webp
-      alt: Macroscopic view of a feather
-      url: https://www.instagram.com/p/BulilBVlPSX/
+- title: Em alumínio
+  date: 2018
+  source: images/photography/em-aluminio_thumb.webp
+  zoomSource: images/photography/em-aluminio.webp
+  alt: Origami of a fleur de lis made of aluminum.

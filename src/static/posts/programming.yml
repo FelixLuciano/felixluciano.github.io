@@ -1,27 +1,27 @@
 ---
-  featured: 
-    title: Mini Elementarium
-    source: images/programming/mini-elementarium_thumb.webp
-    url: https://felixluciano.github.io/mini-elementarium/
-    description: Mini Elementarium is an informative application about the elements of the periodic table with a colorful intuitive and multi linguistic interface for various devices.
+featured: 
+  title: Mini Elementarium
+  source: images/programming/mini-elementarium_thumb.webp
+  url: https://felixluciano.github.io/mini-elementarium/
+  description: Mini Elementarium is an informative application about the elements of the periodic table with a colorful intuitive and multi linguistic interface for various devices.
 
-  galery:
-    - title: Inspirations
-      source: images/programming/parish_thumb.webp
-      url: https://codepen.io/collection/ANgakw/
-      description: My collection of pens inspired by something else.
+galery:
+- title: XAR
+  source: images/programming/xar_thumb.webp
+  url: https://lucianofelix.com.br/XAR/
+  description: Tool for creating custom characters for LCD displays.
 
-    - title: Canvas
-      source: images/programming/flame_thumb.webp
-      url: https://codepen.io/collection/XMOzxb
-      description: My collection of generative illustrations made with HTML canvas.
+- title: AgroInsper.com.br
+  source: images/programming/agroinsper_thumb.webp
+  url: https://agroinsper.com.br/
+  description: Jamstack website for agribusiness student body.''
 
-    - title: Stickman
-      source: images/programming/stickman_thumb.webp
-      url: https://codepen.io/FelixLuciano/pen/xpWwGm/left/
-      description: Control the pose of the character by moving it's body parts to create many gestures.
+- title: Inspirations
+  source: images/programming/parish_thumb.webp
+  url: https://codepen.io/collection/ANgakw/
+  description: My collection of pens inspired by something else.
 
-    - title: Super CheckBox Challenge
-      source: images/programming/super-checkbox-challenge_thumb.webp
-      url: https://codepen.io/FelixLuciano/pen/zaWwVG/left/
-      description: This is a game where the goal is to check all checkboxes. Seems easy?
+- title: Canvas
+  source: images/programming/flame_thumb.webp
+  url: https://codepen.io/collection/XMOzxb
+  description: My collection of generative illustrations made with HTML canvas.
