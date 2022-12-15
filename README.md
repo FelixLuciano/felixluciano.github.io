@@ -1,5 +1,5 @@
-![Profile photo](public/images/profile-photo.webp)
+# felixluciano.github.io
 
-I am Luciano Felix, a student starting my career in computer engineering...
+This repository makes the root of [GitHub.LucianoFelix.com.br](https://github.lucianofelix.com.br) which redirects to my GitHub profile.
 
-See my personal page by visiting [LucianoFelix.com.br](https://lucianofelix.com.br/).
+Access personal page by visiting [LucianoFelix.com.br](https://lucianofelix.com.br).
